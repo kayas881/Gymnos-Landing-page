@@ -1,0 +1,503 @@
+/* ==========================================================================
+   Gymnos landing page
+   Visual language pulled directly from the app: dark near-black background,
+   lime accent, no gradients/glass/blobs. Industrial spec-sheet feel — numbered
+   rows, hairline rules, monospace tags — echoing the app's own "01/02/03"
+   front-desk lists rather than inventing a separate marketing aesthetic.
+   ========================================================================== */
+
+:root {
+  --bg: #0A0C0B;
+  --surface: #121613;
+  --surface-elevated: #1A201C;
+  --card: #151916;
+
+  --text: #F4F7F2;
+  --text-secondary: #A6AEA5;
+  --text-tertiary: #687168;
+
+  --lime: #B7F34A;
+  --lime-dark: #8FC62D;
+  --lime-light: #D7FF8E;
+
+  --border: #282E2A;
+  --divider: #202522;
+
+  --font-display: 'Archivo', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --wrap: 1180px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+.mono { font-family: var(--font-mono); }
+
+.wrap {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Faint brushed-metal hairline texture behind the whole page. Extremely
+   restrained on purpose -- it should read as material, not as "a pattern". */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    115deg,
+    rgba(244, 247, 242, 0.015) 0px,
+    rgba(244, 247, 242, 0.015) 1px,
+    transparent 1px,
+    transparent 68px
+  );
+}
+
+main, header, footer { position: relative; z-index: 1; }
+
+/* ---------- Top bar ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  padding: 20px 0;
+  transition: background-color 0.3s ease, border-color 0.3s ease, padding 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.topbar--scrolled {
+  background: rgba(10, 12, 11, 0.88);
+  backdrop-filter: blur(10px);
+  border-bottom-color: var(--border);
+  padding: 14px 0;
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand__mark { height: 26px; width: auto; }
+
+.brand__word {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.05rem;
+  letter-spacing: 0.12em;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  padding: 15px 26px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn:focus-visible,
+.brand:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 3px;
+}
+
+.btn--primary {
+  background: var(--lime);
+  color: #0E1206;
+}
+.btn--primary:hover {
+  background: var(--lime-light);
+  box-shadow: 0 0 0 3px rgba(183, 243, 74, 0.18);
+}
+
+.btn--outline {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+.btn--outline:hover {
+  border-color: var(--lime);
+  color: var(--lime);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+  font-size: 0.82rem;
+  padding: 10px 18px;
+}
+.btn--ghost:hover { border-color: var(--lime); color: var(--lime); }
+
+.btn--sm { padding: 10px 18px; font-size: 0.82rem; }
+.btn--lg { padding: 18px 34px; font-size: 1.02rem; }
+
+.btn__icon { flex-shrink: 0; }
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+.cta-row--center { justify-content: center; margin-top: 40px; }
+
+.apk-note {
+  margin: 16px 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--text-tertiary);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  padding: 64px 0 0;
+}
+
+.hero__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--lime);
+  margin: 0 0 22px;
+}
+
+.hero__headline {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.mark-lime { color: var(--lime); }
+
+.hero__sub {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  max-width: 46ch;
+  margin: 26px 0 0;
+}
+
+.hero__device {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.hero__tag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--text-tertiary);
+}
+.hero__tag .mono { color: var(--lime); font-weight: 700; }
+
+.hero__hairline {
+  height: 1px;
+  background: var(--divider);
+  margin-top: 44px;
+}
+
+/* ---------- Phone frame ---------- */
+.phone {
+  position: relative;
+  border-radius: 22px;
+  border: 1px solid rgba(183, 243, 74, 0.28);
+  background: var(--bg);
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.6),
+    0 30px 60px -25px rgba(0, 0, 0, 0.7),
+    0 0 40px -12px rgba(183, 243, 74, 0.12);
+}
+
+.phone img { width: 100%; height: auto; display: block; }
+
+.phone--hero {
+  width: 100%;
+  max-width: 430px;
+  transform: rotate(1.8deg) translateY(-22px);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.6),
+    0 40px 80px -30px rgba(0, 0, 0, 0.8),
+    0 0 64px -10px rgba(183, 243, 74, 0.16);
+}
+
+@media (min-width: 1360px) {
+  .phone--hero { margin-right: -64px; }
+}
+
+/* ---------- Product story ----------
+   Four real jobs, one at a time -- not a screenshot gallery, not a feature
+   grid. Each moment is a full, unhurried beat: a number, a claim, one line,
+   and the actual screen doing that job at a size worth looking at. Sides
+   alternate (--rev) and the phone leans a couple of degrees toward its own
+   copy, so the sequence has a little rhythm without ever feeling identical
+   to itself four times in a row. */
+.story {
+  position: relative;
+  z-index: 1;
+}
+
+.story__moment {
+  display: flex;
+  align-items: center;
+  gap: clamp(32px, 6vw, 96px);
+  padding-block: clamp(48px, 9vw, 96px);
+  border-top: 1px solid var(--divider);
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding-inline: 24px;
+}
+.story__moment:first-child { border-top: none; }
+
+.story__moment--rev { flex-direction: row-reverse; }
+
+.story__copy {
+  flex: 1 1 320px;
+  max-width: 36ch;
+}
+
+.story__num {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--lime);
+  margin: 0 0 14px;
+}
+
+.story__copy h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  letter-spacing: -0.01em;
+  margin: 0 0 14px;
+  text-wrap: balance;
+}
+
+.story__copy p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 1.06rem;
+  line-height: 1.6;
+}
+
+.story__frame {
+  flex: 1 1 360px;
+  display: flex;
+  justify-content: center;
+}
+
+.story__frame .phone {
+  width: 100%;
+  max-width: clamp(260px, 30vw, 400px);
+  transition: transform 0.3s ease;
+}
+
+.story__moment:nth-child(1) .story__frame .phone { transform: rotate(-2.5deg); }
+.story__moment:nth-child(2) .story__frame .phone { transform: rotate(2.5deg); }
+.story__moment:nth-child(3) .story__frame .phone { transform: rotate(-2.5deg); }
+.story__moment:nth-child(4) .story__frame .phone { transform: rotate(2.5deg); }
+
+.story__moment:hover .story__frame .phone { transform: rotate(0deg); }
+
+@media (max-width: 880px) {
+  .story__moment {
+    flex-direction: column-reverse;
+    gap: 24px;
+    padding-block: 40px;
+    padding-inline: 24px;
+  }
+  .story__copy { max-width: 100%; }
+  .story__frame .phone { max-width: 320px; }
+}
+
+/* ---------- Hero background mark: a quiet ghost of the logo behind the
+   headline. Sits in its own positioning frame rather than directly in
+   .hero, because .hero spans the full viewport width (it has to, so the
+   hero phone can bleed past the content column on wide screens) while the
+   headline it needs to sit behind is constrained to the same 1180px column
+   as everything else -- without that frame, a percentage-based position
+   would be relative to the wrong width and land wherever on a wide window. */
+.hero-mark-frame {
+  position: absolute;
+  inset: 0;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-mark {
+  position: absolute;
+  top: 430px;
+  left: 20%;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  width: clamp(280px, 34vw, 460px);
+  height: auto;
+  opacity: 0.09;
+  /* grayscale(1) alone already pushes this lime mark to ~80% lightness;
+     brightness(1.6) on top of that clips it to flat white -- a stark cutout
+     instead of a faint ghost, no matter how low the opacity. Darkening it
+     instead keeps it a quiet, muted grey that sits into the near-black
+     background rather than standing out from it. */
+  filter: grayscale(1) brightness(0.55);
+}
+
+/* ---------- Closing CTA ---------- */
+.closing {
+  position: relative;
+  padding: 64px 0 88px;
+  text-align: center;
+}
+
+.closing__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.closing__mark {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto 28px;
+  opacity: 0.95;
+}
+
+.closing__headline {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  border-top: 1px solid var(--divider);
+  padding: 26px 0;
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+}
+
+.footer__meta {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+
+/* ---------- Scroll reveal ---------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+[data-reveal-delay="1"] { transition-delay: 0.08s; }
+[data-reveal-delay="2"] { transition-delay: 0.16s; }
+[data-reveal-delay="3"] { transition-delay: 0.24s; }
+[data-reveal-delay="4"] { transition-delay: 0.32s; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 880px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero__copy { order: 1; text-align: left; }
+  .hero__device { order: 2; align-items: center; }
+  .hero__sub { max-width: 100%; }
+  .phone--hero { max-width: 300px; transform: rotate(0.8deg); }
+  .hero-mark { top: 215px; left: 40%; width: clamp(200px, 46vw, 300px); }
+
+  .cta-row { flex-direction: column; align-items: stretch; }
+  .cta-row .btn { width: 100%; }
+  .cta-row--center { flex-direction: row; }
+  .cta-row--center .btn { width: auto; }
+
+  .footer__meta { display: none; }
+}
+
+@media (max-width: 480px) {
+  .cta-row--center { flex-direction: column; }
+  .cta-row--center .btn { width: 100%; }
+}

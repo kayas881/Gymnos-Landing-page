@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gymnos — Run your gym from your phone.</title>
+  <meta name="description" content="Gymnos is a gym management app for gym owners in India. Track members, record payments, generate receipts, run QR check-in, and send announcements — all from your phone." />
+
+  <meta property="og:title" content="Gymnos — Run your gym from your phone." />
+  <meta property="og:description" content="Track members, record payments and receipts, QR check-in, and send announcements — all from your phone." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="./assets/logo-mark.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;900&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar" id="topbar">
+    <div class="wrap topbar__inner">
+      <a href="#top" class="brand">
+        <img src="./assets/logo-mark.png" alt="" class="brand__mark" width="28" height="32" />
+        <span class="brand__word">GYMNOS</span>
+      </a>
+      <a href="#get" class="btn btn--ghost btn--sm">
+        <span>Download APK</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-mark-frame" aria-hidden="true">
+        <img src="./assets/logo-mark.png" alt="" class="hero-mark" />
+      </div>
+
+      <div class="wrap hero__grid">
+
+        <div class="hero__copy" data-reveal>
+          <p class="eyebrow">FOR GYM OWNERS IN INDIA</p>
+          <h1 class="hero__headline">
+            Run your gym<br />
+            from your <span class="mark-lime">phone.</span>
+          </h1>
+          <p class="hero__sub">
+            Members, payments, receipts, check-ins and announcements —
+            one app for the whole front desk.
+          </p>
+
+          <div class="cta-row" id="get">
+            <a href="https://expo.dev/artifacts/eas/vR8JYldPXPYcz8A26DhN_VflXT9llxcSPzzIttX0tmM.apk"
+               class="btn btn--primary" target="_blank" rel="noopener">
+              <span>Download the APK</span>
+              <svg class="btn__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4">
+                <path d="M12 4v12m0 0-5-5m5 5 5-5M5 20h14" stroke-linecap="square" stroke-linejoin="miter"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Gymnos%20for%20my%20gym."
+               class="btn btn--outline" target="_blank" rel="noopener">
+              <svg class="btn__icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12.004 2C6.478 2 2 6.477 2 11.999c0 1.996.586 3.855 1.598 5.415L2.06 22l4.71-1.502A9.958 9.958 0 0 0 12.004 22C17.526 22 22 17.523 22 12.001 22 6.477 17.526 2 12.004 2Zm0 18.031a8.02 8.02 0 0 1-4.312-1.257l-.31-.184-2.792.891.905-2.72-.202-.28a8.017 8.017 0 0 1-1.293-4.482c0-4.42 3.594-8.014 8.014-8.014 4.42 0 8.014 3.594 8.014 8.014 0 4.42-3.595 8.032-8.014 8.032Z"/>
+              </svg>
+              <span>WhatsApp us</span>
+            </a>
+          </div>
+
+          <p class="apk-note">Direct APK download for Android · no Play Store needed</p>
+        </div>
+
+        <div class="hero__device" data-reveal data-reveal-delay="1">
+          <div class="phone phone--hero">
+            <img src="./assets/shots/dashboard.jpg" alt="Gymnos owner dashboard showing revenue, active members, and front desk tools" />
+          </div>
+          <div class="hero__tag">
+            <span class="mono">01</span>
+            <span>OWNER DASHBOARD</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="hero__hairline" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ PRODUCT STORY ============
+         Four real jobs the app does, each one a full moment: number, claim,
+         one line, and the actual screen doing that job at real size. Not a
+         gallery, not a feature grid -- one thing at a time. The screenshots
+         are the hero here, so no background mark competes with them --
+         that lives behind the closing section instead, where there's
+         nothing but text for it to sit quietly behind. -->
+    <section class="story" aria-label="What Gymnos does">
+
+      <article class="story__moment" data-reveal>
+        <div class="story__copy">
+          <p class="story__num mono">01</p>
+          <h3>Track members</h3>
+          <p>Every member, plan and status in one place.</p>
+        </div>
+        <div class="story__frame">
+          <div class="phone">
+            <img src="./assets/shots/members.jpg" alt="Gymnos member directory with search, status filters, and app-login badges" loading="lazy" />
+          </div>
+        </div>
+      </article>
+
+      <article class="story__moment story__moment--rev" data-reveal>
+        <div class="story__copy">
+          <p class="story__num mono">02</p>
+          <h3>Record payments &amp; receipts</h3>
+          <p>Record payments and generate a proper receipt every time.</p>
+        </div>
+        <div class="story__frame">
+          <div class="phone">
+            <img src="./assets/shots/payments.jpg" alt="Gymnos payments screen with revenue total and a list of transactions with receipt numbers" loading="lazy" />
+          </div>
+        </div>
+      </article>
+
+      <article class="story__moment" data-reveal>
+        <div class="story__copy">
+          <p class="story__num mono">03</p>
+          <h3>QR check-in</h3>
+          <p>Members scan in at the door — no register, no guesswork on who trained today.</p>
+        </div>
+        <div class="story__frame">
+          <div class="phone">
+            <img src="./assets/shots/attendance.jpg" alt="Gymnos attendance screen with a Gym QR button for members to scan in" loading="lazy" />
+          </div>
+        </div>
+      </article>
+
+      <article class="story__moment story__moment--rev" data-reveal>
+        <div class="story__copy">
+          <p class="story__num mono">04</p>
+          <h3>Send announcements</h3>
+          <p>Post once and reach everyone — or just your staff, or a single time slot. Nobody gets pinged for a message that isn't theirs.</p>
+        </div>
+        <div class="story__frame">
+          <div class="phone">
+            <img src="./assets/shots/announcements.jpg" alt="Gymnos announcements screen with posts targeted to Everyone, Staff Only, and Morning audiences" loading="lazy" />
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ============ CLOSING CTA ============ -->
+    <section class="closing" id="contact">
+      <div class="wrap closing__inner">
+        <img src="./assets/logo-mark.png" alt="" class="closing__mark" width="56" height="63" />
+        <h2 class="closing__headline">Put your gym<br />on your phone.</h2>
+
+        <div class="cta-row cta-row--center">
+          <a href="https://expo.dev/artifacts/eas/vR8JYldPXPYcz8A26DhN_VflXT9llxcSPzzIttX0tmM.apk"
+             class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+            <span>Download the APK</span>
+          </a>
+          <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Gymnos%20for%20my%20gym."
+             class="btn btn--outline btn--lg" target="_blank" rel="noopener">
+            <svg class="btn__icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12.004 2C6.478 2 2 6.477 2 11.999c0 1.996.586 3.855 1.598 5.415L2.06 22l4.71-1.502A9.958 9.958 0 0 0 12.004 22C17.526 22 22 17.523 22 12.001 22 6.477 17.526 2 12.004 2Zm0 18.031a8.02 8.02 0 0 1-4.312-1.257l-.31-.184-2.792.891.905-2.72-.202-.28a8.017 8.017 0 0 1-1.293-4.482c0-4.42 3.594-8.014 8.014-8.014 4.42 0 8.014 3.594 8.014 8.014 0 4.42-3.595 8.032-8.014 8.032Z"/>
+            </svg>
+            <span>WhatsApp us</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span>GYMNOS</span>
+      <span class="mono footer__meta">BUILT FOR GYMS IN INDIA</span>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
