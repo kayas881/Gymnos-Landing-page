@@ -1,0 +1,4 @@
+# Short link for advertising: gymnos.tech/download
+# Points at the "latest" release rather than a pinned tag, so publishing a new
+# release updates every ad and poster that already went out.
+/download  https://github.com/kayas881/gym-app/releases/latest/download/Gymnos.apk  302
